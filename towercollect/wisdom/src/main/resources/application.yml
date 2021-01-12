@@ -1,0 +1,49 @@
+server:
+  port: 20001
+spring:
+  dataSource:
+    eipsupplier:
+      url: jdbc:mysql://8.131.69.238:3306/eipsupplier?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+      username: root
+      password: Jovision123$
+      driverClassName: com.mysql.cj.jdbc.Driver
+      initialSize: 5
+      minIdle: 5
+      maxIdle: 10
+      maxActive: 50
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 2000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 10
+      maxPoolPreparedStatementPerConnectionSize: 20
+      breakAfterAcquireFailure: false
+      connectionErrorRetryAttempts: 3
+  redis:
+    # redis 服务器地址
+    ip: 8.131.69.238
+    # Redis 服务器端连接端口
+    port: 6379
+    # redis 服务器连接密码
+    password: Jovision123$
+    # 连接超时时间（毫秒）
+    timeout: 1000
+    # 连接池最大连接数
+    maxactive: 200
+    # 连接池最大阻塞等待时间（使用负值表示没有）
+    maxwait: 1
+    # 连接池中的最大空闲连接
+    maxidle: 10
+
+mybatis-plus:
+  configuration:
+    # 开启二级缓存
+    cache-enabled: true
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: false
+    # 输出日志文件
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

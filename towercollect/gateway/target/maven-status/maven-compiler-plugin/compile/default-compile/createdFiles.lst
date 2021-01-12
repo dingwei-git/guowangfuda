@@ -1,0 +1,7 @@
+com\gateway\config\AuthorizationFilter.class
+com\gateway\redis\RedisProperties.class
+com\gateway\redis\RedisConfiguration.class
+com\gateway\config\ApiLocator.class
+com\gateway\GatewayApplication.class
+com\gateway\anantation\EnableRedis.class
+com\gateway\redis\RedisUtil.class
